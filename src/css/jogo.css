@@ -21,7 +21,7 @@
     height: calc(100% - 80px);
     width: 5px;
     margin: 0 190px;
-    background: greenyellow;
+    /* background: greenyellow; */
     position: relative;
 }
 
@@ -29,7 +29,7 @@
     left: -1.666px;
     height: 8px;
     width: 8px;
-    bottom: 0;
+    bottom: 290px;
     background: black;
     position: absolute;
 }

@@ -1,11 +1,11 @@
 class Passaro {
     static elemento = document.querySelector(".passaro");
     static tamanho = 8;
-    static posicaoY = 0;
+    static posicaoY = 290;
     static pulando = false;
     static caindo = false;
     static velocidadeQueda = 0.5
-    static velocidadePulo = 2;
+    static velocidadePulo;
 
     static pular() {
         if (this.pulando == false) {
@@ -13,7 +13,8 @@ class Passaro {
             this.pulando = true;
             // Define posição final do pulo, limitando em 560 - this.tamanho
             var posicaoFinal = (this.posicaoY + 100) >= 560 - this.tamanho ? 560 - this.tamanho : this.posicaoY + 100;
-            this.velocidadePulo = 2;
+            // Inicializa velocidade de pulo como 2;
+            this.velocidadePulo = 2.5;
             /* 
             * Intervalo: faz a animação de pulo adicionando 2 de altura por execução até 
             * atingir o valor da variavel posicaoFinal;
