@@ -1,6 +1,6 @@
 class Passaro {
     static elemento = document.querySelector(".passaro");
-    static tamanho = 8;
+    static tamanho = 58;
     static posicaoY = 290;
     static pulando = false;
     static caindo = false;
@@ -8,7 +8,7 @@ class Passaro {
     static velocidadePulo;
 
     static pular() {
-        if (this.pulando == false) {
+        if (this.pulando == false && Jogo.iniciado == true) {
             // Define pulando como true
             this.pulando = true;
             // Define posição final do pulo, limitando em 560 - this.tamanho
@@ -75,6 +75,7 @@ class Passaro {
 
     static morrer() {
         console.log("morrer")
+        Jogo.iniciado = false
     }
 
     static atualizarPosicao() {

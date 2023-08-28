@@ -1,11 +1,12 @@
 document.querySelector("body").addEventListener("keydown", function (e) {
     if (e.keyCode == 32) {
-        Passaro.pular();
         Jogo.iniciar()
+        Passaro.pular();
     }
 })
 
 document.querySelector("body").addEventListener("click", function () {
-    Passaro.pular();
     Jogo.iniciar()
+    Passaro.pular();
 })
+

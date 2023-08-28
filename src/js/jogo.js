@@ -12,10 +12,13 @@ class Jogo {
 
     static moverChao() {
         var contador = 0;
-        var invervalo = setInterval(() => {
+        var intervalo = setInterval(() => {
             console.log("teste")
             contador -= .75;
             this.elementoChao.style.backgroundPositionX = `${contador}px`
+            if (Jogo.iniciado == false){
+                clearInterval(intervalo);
+            }
         }, 1);
     }
 }
