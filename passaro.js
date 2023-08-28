@@ -4,6 +4,7 @@ class Passaro {
     static posicaoY = 0;
     static pulando = false;
     static caindo = false;
+    static velocidade = 0.5
 
     static pular() {
         if (this.pulando == false) {
@@ -16,6 +17,8 @@ class Passaro {
             * atingir o valor da variavel posicaoFinal;
             */
             var intervalo = setInterval(() => {
+                // redefine velocidade de queda para 0.5;
+                this.velocidade = 0.5;
                 // Adiciona altura
                 this.posicaoY += 2;
                 // Chama o método para atualizar a posicao se ela ainda não atingiu posicaoFinal
@@ -44,10 +47,15 @@ class Passaro {
             if (this.pulando == false) {
                 // Enquanto a posicao do passaro for > 0, diminui 0.5 a cada execução
                 if (this.posicaoY > 0) {
-                    this.posicaoY -= 0.5
+                    // Aceleração de queda: aumenta a velocidade de queda a cada execução
+                    this.velocidade += 0.009
+                    // Muda a posicao de acordo com a aceleracao this.velocidade
+                    this.posicaoY -= this.velocidade
+                    // atualiza posicao a cada execução
                     this.atualizarPosicao()
                     // Se o pássaro atingir posicao 0 (chão da fase) ele morre
                 } else {
+                    this.velocidade = 0.5
                     // ...
                     this.morrer();
                     // define caindo como false
