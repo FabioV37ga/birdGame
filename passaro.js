@@ -11,7 +11,7 @@ class Passaro {
             // Define pulando como true
             this.pulando = true;
             // Define posição final do pulo, limitando em 400 - this.tamanho
-            var posicaoFinal = (this.posicaoY + 75) >= 400 - this.tamanho ? 400 - this.tamanho : this.posicaoY + 75;
+            var posicaoFinal = (this.posicaoY + 100) >= 400 - this.tamanho ? 400 - this.tamanho : this.posicaoY + 100;
             /* 
             * Intervalo: faz a animação de pulo adicionando 2 de altura por execução até 
             * atingir o valor da variavel posicaoFinal;
