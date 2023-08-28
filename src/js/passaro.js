@@ -22,10 +22,11 @@ class Passaro {
             var intervalo = setInterval(() => {
                 // redefine velocidade de queda para 0.5;
                 this.velocidadeQueda = 0.5;
+                // Incrementa velocidade a cada execução (aceleração)
                 this.velocidadePulo -= 0.009
                 // Adiciona altura
                 this.posicaoY += this.velocidadePulo;
-                console.log(this.velocidadePulo)
+                // console.log(this.velocidadePulo)
                 // Chama o método para atualizar a posicao se ela ainda não atingiu posicaoFinal
                 this.posicaoY >= 654 ? null : this.atualizarPosicao();
                 // Finaliza o intervalo se a posicao atingiu posicaoFinal
