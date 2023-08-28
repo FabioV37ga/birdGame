@@ -8,7 +8,8 @@ class Bird {
 
         if (this.jumpState == 0) {
             console.log("bird.jump");
-            if (this.posY + 60 <= 392) {
+
+            if (this.posY + 75 <= 392) {
                 this.jumpState = 1;
                 var teto = this.posY + 75;
                 var intervalo = setInterval(() => {
@@ -20,10 +21,11 @@ class Bird {
                         this.jumpState = 0
                     }
                 }, 1);
+
             } else if (this.posY <= 392) {
                 this.jumpState = 1
                 var intervalo = setInterval(() => {
-                    this.posY++
+                    this.posY += 2;
                     this.atualizarPosicao();
                     if (this.posY >= 392) {
                         this.fallState == 0 ? this.fall() : null;
