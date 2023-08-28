@@ -1,0 +1,35 @@
+.jogo {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-size: contain;
+    background-image: url('../img/background.png');
+}
+
+.chao {
+    height: 80px;
+    width: inherit;
+    bottom: 0px;
+    position: absolute;
+    background-image: url('../img/ground.png');
+    background-size: contain;
+}
+
+.passaro-slider {
+    height: calc(100% - 80px);
+    width: 5px;
+    margin: 0 190px;
+    background: greenyellow;
+    position: relative;
+}
+
+.passaro {
+    left: -1.666px;
+    height: 8px;
+    width: 8px;
+    bottom: 0;
+    background: black;
+    position: absolute;
+}
