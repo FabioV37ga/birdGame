@@ -4,7 +4,7 @@ class Passaro {
     static posicaoY = 290;
     static pulando = false;
     static caindo = false;
-    static velocidadeQueda = 0.5
+    static velocidadeQueda = 0.35
     static velocidadePulo;
 
     static pular() {
@@ -14,16 +14,17 @@ class Passaro {
             // Define posição final do pulo, limitando em 560 - this.tamanho
             var posicaoFinal = (this.posicaoY + 100) >= 560 - this.tamanho ? 560 - this.tamanho : this.posicaoY + 100;
             // Inicializa velocidade de pulo como 2;
-            this.velocidadePulo = 2.5;
+            this.velocidadePulo = 3.5;
             /* 
             * Intervalo: faz a animação de pulo adicionando 2 de altura por execução até 
             * atingir o valor da variavel posicaoFinal;
             */
             var intervalo = setInterval(() => {
-                // redefine velocidade de queda para 0.5;
-                this.velocidadeQueda = 0.5;
+                // redefine velocidade de queda para 0.35;
+                this.velocidadeQueda = 0.35;
                 // Incrementa velocidade a cada execução (aceleração)
-                this.velocidadePulo -= 0.009
+                this.velocidadePulo -= 0.02
+                console.log(this.velocidadePulo)
                 // Adiciona altura
                 this.posicaoY += this.velocidadePulo;
                 // console.log(this.velocidadePulo)
@@ -62,8 +63,8 @@ class Passaro {
                 } else {
                     // Se o pássaro atingir posicao 0 (chão da fase) ele morre
                     this.morrer();
-                    // redefine velocidade de queda para 0.5;
-                    this.velocidadeQueda = 0.5
+                    // redefine velocidade de queda para 0.35;
+                    this.velocidadeQueda = 0.35
                     // define caindo como false
                     this.caindo = false;
                     // Limpa o intervalo;

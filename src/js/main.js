@@ -1,12 +1,20 @@
+var start = false;
+
 document.querySelector("body").addEventListener("keydown", function (e) {
     if (e.keyCode == 32) {
-        Jogo.iniciar()
+        if (start == false) {
+            start = true
+            Jogo.iniciar()
+        }
         Passaro.pular();
     }
 })
 
 document.querySelector("body").addEventListener("click", function () {
-    Jogo.iniciar()
+    if (start == false) {
+        start = true
+        Jogo.iniciar()
+    }
     Passaro.pular();
 })
 
