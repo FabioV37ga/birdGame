@@ -21,7 +21,10 @@ class Passaro {
             * atingir o valor da variavel posicaoFinal;
             */
             var intervalo = setInterval(() => {
-                this.rotacao <= 45 ? this.rotacao++ : null;
+                var rotacao = setInterval(() => {
+                    this.rotacao <= 35 ? this.rotacao+=2 : clearInterval(rotacao);
+                }, 1);
+                // this.rotacao <= 45 ? this.rotacao++ : null;
                 // redefine velocidade de queda para 0.35;
                 this.velocidadeQueda = 0.35;
                 // Incrementa velocidade a cada execução (aceleração)
@@ -54,6 +57,7 @@ class Passaro {
         // limite 0px
         var intervalo = setInterval(() => {
             if (this.pulando == false) {
+                this.rotacao >= -85 ? this.rotacao-- : null;
                 // Enquanto a posicao do passaro for > 0, aceleradamente cai em direção ao chão da fase
                 if (this.posicaoY > 0) {
                     // Aceleração de queda: aumenta a velocidade de queda a cada execução
