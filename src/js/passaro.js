@@ -40,7 +40,7 @@ class Passaro {
                     // Habilita queda do pássaro se estiver desabilitada
                     this.caindo == false ? this.cair() : null;
                     // Se o pássaro atinge o teto da fase ele morre
-                    this.posicaoY >= 560 - this.tamanho ? this.morrer() : null;
+                    // this.posicaoY >= 560 - this.tamanho ? this.morrer() : null;
                     // Define pulando como falso
                     this.pulando = false;
                     // Limpa o intervalo
