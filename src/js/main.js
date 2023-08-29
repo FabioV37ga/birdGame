@@ -10,7 +10,7 @@ document.querySelector("body").addEventListener("keydown", function (e) {
     }
 })
 
-document.querySelector("body").addEventListener("click", function () {
+document.querySelector("body").addEventListener("mousedown", function () {
     if (start == false) {
         start = true
         Jogo.iniciar()

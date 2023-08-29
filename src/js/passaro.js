@@ -55,7 +55,7 @@ class Passaro {
                 // Enquanto a posicao do passaro for > 0, aceleradamente cai em direção ao chão da fase
                 if (this.posicaoY > 0) {
                     // Aceleração de queda: aumenta a velocidade de queda a cada execução
-                    this.velocidadeQueda += 0.009
+                    this.velocidadeQueda += 0.015
                     // Muda a posicao de acordo com a aceleracao this.velocidadeQueda
                     this.posicaoY -= this.velocidadeQueda
                     // atualiza posicao a cada execução
