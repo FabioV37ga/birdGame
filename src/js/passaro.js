@@ -21,18 +21,16 @@ class Passaro {
             * atingir o valor da variavel posicaoFinal;
             */
             var intervalo = setInterval(() => {
+                // Invervalo responsável por animar a rotação do pássaro no momento do pulo
                 var rotacao = setInterval(() => {
-                    this.rotacao <= 35 ? this.rotacao+=2 : clearInterval(rotacao);
+                    this.rotacao <= 35 ? this.rotacao += 2 : clearInterval(rotacao);
                 }, 1);
-                // this.rotacao <= 45 ? this.rotacao++ : null;
                 // redefine velocidade de queda para 0.35;
                 this.velocidadeQueda = 0.35;
                 // Incrementa velocidade a cada execução (aceleração)
                 this.velocidadePulo -= 0.02
-                console.log(this.velocidadePulo)
                 // Adiciona altura
                 this.posicaoY += this.velocidadePulo;
-                // console.log(this.velocidadePulo)
                 // Chama o método para atualizar a posicao se ela ainda não atingiu posicaoFinal
                 this.posicaoY >= 654 ? null : this.atualizarPosicao();
                 // Finaliza o intervalo se a posicao atingiu posicaoFinal
@@ -57,6 +55,7 @@ class Passaro {
         // limite 0px
         var intervalo = setInterval(() => {
             if (this.pulando == false) {
+                // Rotaciona o pássaro em direção ao chão enquanto ele estiver caindo;
                 this.rotacao >= -85 ? this.rotacao-- : null;
                 // Enquanto a posicao do passaro for > 0, aceleradamente cai em direção ao chão da fase
                 if (this.posicaoY > 0) {
@@ -86,7 +85,9 @@ class Passaro {
     }
 
     static atualizarPosicao() {
+        // Atualiza a posição Y do pássaro
         this.elemento.style.bottom = `${this.posicaoY}px`;
+        // Atualiza o valor de rotação do pássaro
         this.elemento.children[0].style = `transform: rotate(${this.rotacao}deg)`
     }
 }
