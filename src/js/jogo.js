@@ -13,12 +13,16 @@ class Jogo {
     static moverChao() {
         var contador = 0;
         var intervalo = setInterval(() => {
-            console.log("teste")
             contador -= .75;
             this.elementoChao.style.backgroundPositionX = `${contador}px`
-            if (Jogo.iniciado == false){
+            if (Jogo.iniciado == false) {
                 clearInterval(intervalo);
             }
         }, 1);
+    }
+
+    static finalizar() {
+        Jogo.iniciado = false
+        console.log("finalizar jogo")
     }
 }

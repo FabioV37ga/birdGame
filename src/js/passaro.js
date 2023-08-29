@@ -75,7 +75,7 @@ class Passaro {
 
     static morrer() {
         console.log("morrer")
-        Jogo.iniciado = false
+        Jogo.finalizar()
     }
 
     static atualizarPosicao() {
