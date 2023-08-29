@@ -6,6 +6,7 @@ class Passaro {
     static caindo = false;
     static velocidadeQueda = 0.35
     static velocidadePulo;
+    static rotacao = 0;
 
     static pular() {
         if (this.pulando == false && Jogo.iniciado == true) {
@@ -20,6 +21,7 @@ class Passaro {
             * atingir o valor da variavel posicaoFinal;
             */
             var intervalo = setInterval(() => {
+                this.rotacao <= 45 ? this.rotacao++ : null;
                 // redefine velocidade de queda para 0.35;
                 this.velocidadeQueda = 0.35;
                 // Incrementa velocidade a cada execução (aceleração)
@@ -81,5 +83,6 @@ class Passaro {
 
     static atualizarPosicao() {
         this.elemento.style.bottom = `${this.posicaoY}px`;
+        this.elemento.children[0].style = `transform: rotate(${this.rotacao}deg)`
     }
 }

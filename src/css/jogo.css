@@ -33,10 +33,11 @@
     /* background: black; */
     position: absolute;
     display: flex;
+    transform: scaleX(-1);
 }
 
 .passaro img{
-    transform: scaleX(-1);
+    transform: rotate(0deg);
     width: 64px;
     user-select: none;
 }
