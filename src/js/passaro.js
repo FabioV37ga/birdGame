@@ -2,6 +2,8 @@ class Passaro {
     static elemento = document.querySelector(".passaro");
     static tamanho = 50;
     static posicaoY = 290;
+    static posicaoSuperior = this.posicaoY + this.tamanho;
+    static posicaoInferior = this.posicaoY;
     static pulando = false;
     static caindo = false;
     static velocidadeQueda = 0.15
@@ -88,6 +90,9 @@ class Passaro {
     static atualizarPosicao() {
         // Atualiza a posição Y do pássaro
         this.elemento.style.bottom = `${this.posicaoY}px`;
+        // Atualiza dados das hitboxes
+        this.posicaoSuperior = this.posicaoY + this.tamanho;
+        this.posicaoInferior = this.posicaoY;
         // Atualiza o valor de rotação do pássaro
         this.elemento.children[0].style = `transform: rotate(${this.rotacao}deg)`
     }
