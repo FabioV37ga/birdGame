@@ -1,22 +1,24 @@
 class Passaro {
     static elemento = document.querySelector(".passaro");
     static tamanho = 50;
-    static posicaoY = 290;
+    static posicaoY = 245;
     static posicaoSuperior = this.posicaoY + this.tamanho;
     static posicaoInferior = this.posicaoY;
-    static pulando = false;
     static caindo = false;
     static velocidadeQueda = 0.15
+    static pulando = false;
     static velocidadePulo = 2.0;
     static tamanhoPulo = 70;
     static rotacao = 0;
+    static index = 0;
 
     static pular() {
-        if (this.pulando == false && Jogo.iniciado == true) {
+        if (Jogo.iniciado == true) {
+            this.index++;
             // Define pulando como true
             this.pulando = true;
             // Define posição final do pulo, limitando em 560 - this.tamanho
-            var posicaoFinal = (this.posicaoY + this.tamanhoPulo) >= 560 - this.tamanho ? 560 - this.tamanho : this.posicaoY + this.tamanhoPulo;
+            var posicaoFinal = (this.posicaoY + this.tamanhoPulo) >= Jogo.alturaJanela - this.tamanho ? Jogo.alturaJanela - this.tamanho : this.posicaoY + this.tamanhoPulo;
             // Inicializa velocidade de pulo como 2;
             this.velocidadePulo = 2.0;
             /* 
@@ -31,11 +33,12 @@ class Passaro {
                 // redefine velocidade de queda para 0.15;
                 this.velocidadeQueda = 0.15;
                 // Incrementa velocidade a cada execução (aceleração)
-                this.velocidadePulo -= 0.02
+                this.velocidadePulo -= 0.02;
                 // Adiciona altura
                 this.posicaoY += this.velocidadePulo;
                 // Chama o método para atualizar a posicao se ela ainda não atingiu posicaoFinal
-                this.posicaoY >= 654 ? null : this.atualizarPosicao();
+                this.atualizarPosicao();
+                // this.posicaoY >= 654 ? null : this.atualizarPosicao();
                 // Finaliza o intervalo se a posicao atingiu posicaoFinal
                 if (this.posicaoY >= posicaoFinal) {
                     // Habilita queda do pássaro se estiver desabilitada

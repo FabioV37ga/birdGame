@@ -1,4 +1,5 @@
 class Jogo {
+    static alturaJanela = 560;
     static iniciado = false;
     static elementoChao = document.querySelector(".chao");
     static pontuacao;
