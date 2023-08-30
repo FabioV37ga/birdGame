@@ -10,11 +10,9 @@ class Passaro {
     static velocidadePulo = 2.0;
     static tamanhoPulo = 70;
     static rotacao = 0;
-    static index = 0;
 
     static pular() {
         if (Jogo.iniciado == true) {
-            this.index++;
             // Define pulando como true
             this.pulando = true;
             // Define posição final do pulo, limitando em 560 - this.tamanho
