@@ -11,6 +11,7 @@ class Jogo {
             console.log("jogo.iniciar");
             // Chama moverChao()
             this.moverChao()
+            Passaro.animar()
         }
     }
 
