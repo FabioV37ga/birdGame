@@ -1,11 +1,12 @@
 class Passaro {
     static elemento = document.querySelector(".passaro");
-    static tamanho = 58;
+    static tamanho = 50;
     static posicaoY = 290;
     static pulando = false;
     static caindo = false;
-    static velocidadeQueda = 0.35
-    static velocidadePulo;
+    static velocidadeQueda = 0.15
+    static velocidadePulo = 2.0;
+    static tamanhoPulo = 70;
     static rotacao = 0;
 
     static pular() {
@@ -13,9 +14,9 @@ class Passaro {
             // Define pulando como true
             this.pulando = true;
             // Define posição final do pulo, limitando em 560 - this.tamanho
-            var posicaoFinal = (this.posicaoY + 100) >= 560 - this.tamanho ? 560 - this.tamanho : this.posicaoY + 100;
+            var posicaoFinal = (this.posicaoY + this.tamanhoPulo) >= 560 - this.tamanho ? 560 - this.tamanho : this.posicaoY + this.tamanhoPulo;
             // Inicializa velocidade de pulo como 2;
-            this.velocidadePulo = 3.5;
+            this.velocidadePulo = 2.0;
             /* 
             * Intervalo: faz a animação de pulo adicionando 2 de altura por execução até 
             * atingir o valor da variavel posicaoFinal;
@@ -25,8 +26,8 @@ class Passaro {
                 var rotacao = setInterval(() => {
                     this.rotacao <= 35 ? this.rotacao += 2 : clearInterval(rotacao);
                 }, 1);
-                // redefine velocidade de queda para 0.35;
-                this.velocidadeQueda = 0.35;
+                // redefine velocidade de queda para 0.15;
+                this.velocidadeQueda = 0.15;
                 // Incrementa velocidade a cada execução (aceleração)
                 this.velocidadePulo -= 0.02
                 // Adiciona altura
@@ -68,8 +69,8 @@ class Passaro {
                 } else {
                     // Se o pássaro atingir posicao 0 (chão da fase) ele morre
                     this.morrer();
-                    // redefine velocidade de queda para 0.35;
-                    this.velocidadeQueda = 0.35
+                    // redefine velocidade de queda para 0.15;
+                    this.velocidadeQueda = 0.15
                     // define caindo como false
                     this.caindo = false;
                     // Limpa o intervalo;

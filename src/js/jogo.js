@@ -1,6 +1,7 @@
 class Jogo {
     static iniciado = false;
     static elementoChao = document.querySelector(".chao");
+    static pontuacao;
 
     static iniciar() {
         // Inicia o jogo
