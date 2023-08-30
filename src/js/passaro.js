@@ -5,10 +5,10 @@ class Passaro {
     static posicaoSuperior = this.posicaoY + this.tamanho;
     static posicaoInferior = this.posicaoY;
     static caindo = false;
-    static velocidadeQueda = 0.15
+    static velocidadeQueda = 0.10
     static pulando = false;
     static velocidadePulo = 2.0;
-    static tamanhoPulo = 70;
+    static tamanhoPulo = 85;
     static rotacao = 0;
 
     static pular() {
@@ -26,12 +26,12 @@ class Passaro {
             var intervalo = setInterval(() => {
                 // Invervalo responsável por animar a rotação do pássaro no momento do pulo
                 var rotacao = setInterval(() => {
-                    this.rotacao <= 35 ? this.rotacao += 2 : clearInterval(rotacao);
+                    this.rotacao <= 20 ? this.rotacao += 2 : clearInterval(rotacao);
                 }, 1);
                 // redefine velocidade de queda para 0.15;
                 this.velocidadeQueda = 0.15;
                 // Incrementa velocidade a cada execução (aceleração)
-                this.velocidadePulo -= 0.02;
+                this.velocidadePulo -= 0.010;
                 // Adiciona altura
                 this.posicaoY += this.velocidadePulo;
                 // Chama o método para atualizar a posicao se ela ainda não atingiu posicaoFinal
@@ -59,12 +59,14 @@ class Passaro {
         // limite 0px
         var intervalo = setInterval(() => {
             if (this.pulando == false) {
+                console.log(this.velocidadeQueda)
                 // Rotaciona o pássaro em direção ao chão enquanto ele estiver caindo;
-                this.rotacao >= -85 ? this.rotacao-- : null;
-                // Enquanto a posicao do passaro for > 0, aceleradamente cai em direção ao chão da fase
-                if (this.posicaoY > 0) {
+                if (this.velocidadeQueda > 1.5)
+                    this.rotacao >= -85 ? this.rotacao-- : null;
+                // Enquanto a posicao do passaro for > -8, aceleradamente cai em direção ao chão da fase
+                if (this.posicaoY > -8) {
                     // Aceleração de queda: aumenta a velocidade de queda a cada execução
-                    this.velocidadeQueda += 0.015
+                    this.velocidadeQueda += 0.02
                     // Muda a posicao de acordo com a aceleracao this.velocidadeQueda
                     this.posicaoY -= this.velocidadeQueda
                     // atualiza posicao a cada execução
