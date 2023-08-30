@@ -30,14 +30,14 @@
     left: -30px;
     height: 50px;
     width: 50px;
-    bottom: 270px;
+    bottom: 240px;
     /* background: black; */
     position: absolute;
     display: flex;
     transform: scaleX(-1);
 }
 
-.passaro img{
+.passaro img {
     transform: rotate(0deg);
     width: 50px;
     user-select: none;
