@@ -15,7 +15,7 @@
     bottom: 0px;
     position: absolute;
     background-image: url('../img/ground.png');
-    background-size: contain;
+    background-size: 70%;
 }
 
 .passaro-slider {
