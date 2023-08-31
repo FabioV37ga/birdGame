@@ -92,17 +92,14 @@ class Passaro {
     static animar() {
         console.log("animar")
         // Essa variavel controla o frame atual (entre 3 possiveis) da imagem do passaro
-        var imagemVoo = 1;
-        /* Esse intervalo é responsavel por incrementar imagem voo a cada execução, 
-        * quando chega em 3, volta para 1.
-        * A cada execução, troca a imagem do pássaro, dando a impressão de que está batendo as asas
-        */
+        var position = 0;
         var intervalo = setInterval(() => {
             // Só executa essa animação caso konamicode = false
-            if (this.elemento.children[0].src != `src/img/konami.png`) {
-                this.elemento.children[0].src = `src/img/bird_${imagemVoo}.png`
-                // Incrementa no range 1 → 3
-                imagemVoo >= 3 ? imagemVoo = 1 : imagemVoo++;
+            if (this.elemento.children[0].children[0].src != `src/img/konami.png`) {
+                // Adiciona 50.757px de margem a cada execução, alterando e enquadrando
+                // a imagem do passaro dando a impressão de animação.
+                position > -101.514 ? position -= 50.757 : position = 0
+                this.elemento.children[0].children[0].style.marginLeft = `${position}px`
             }
             // Trava o intervalo no game over
             if (Jogo.iniciado == false)
