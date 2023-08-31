@@ -41,7 +41,7 @@ function onKonamiCode(cb) {
 }
 
 onKonamiCode(function () {
-    document.querySelector(".passaro").children[0].src = 'src/img/konami.png'
+    document.querySelector(".passaro").children[0].children[0].src = 'src/img/konami.png'
 
 })
 
