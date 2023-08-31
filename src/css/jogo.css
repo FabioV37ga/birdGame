@@ -7,6 +7,7 @@
     background-size: contain;
     background-image: url('../img/background.png');
     overflow: hidden;
+    image-rendering: pixelated;
 }
 
 .chao {
@@ -35,9 +36,10 @@
     position: absolute;
     display: flex;
     transform: scaleX(-1);
+    image-rendering: auto;
 }
 
-.passaro-container{
+.passaro-container {
     transform: rotate(0deg);
     user-select: none;
     width: 50px;
