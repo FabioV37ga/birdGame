@@ -5,11 +5,12 @@ class Passaro {
     static posicaoSuperior = this.posicaoY + this.tamanho;
     static posicaoInferior = this.posicaoY;
     static caindo = false;
-    static velocidadeQueda = 0.10
+    static velocidadeQueda = 0.1
     static pulando = false;
     static velocidadePulo = 2.0;
     static tamanhoPulo = 85;
     static rotacao = 0;
+    static estado = 'vivo';
 
     static pular() {
         if (Jogo.iniciado == true) {
@@ -86,6 +87,7 @@ class Passaro {
 
     static morrer() {
         console.log("morrer")
+        this.estado = 'morto'
         Jogo.finalizar()
     }
 

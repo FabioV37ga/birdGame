@@ -18,12 +18,12 @@ class Jogo {
     static moverChao() {
         // Movimenta o chão da fase para a esquerda continuamente até que o jogo seja finalizado
         // Variável contadora
-        var contador = 0;
+        var posicaoChao = 0;
         // Intervalo responsável por mover o chão
         var intervalo = setInterval(() => {
-            contador -= .75;
-            // Atribui posição = contador px
-            this.elementoChao.style.backgroundPositionX = `${contador}px`
+            posicaoChao -= .75;
+            // Atribui posição = posicaoChao px
+            this.elementoChao.style.backgroundPositionX = `${posicaoChao}px`
             // Se o jogo for finalizado, finaliza o loop
             if (Jogo.iniciado == false) {
                 clearInterval(intervalo);
@@ -33,7 +33,14 @@ class Jogo {
 
     static finalizar() {
         // Finaliza o jogo
-        Jogo.iniciado = false
+        Passaro.estado == 'morto' ? Jogo.iniciado = false : null;
         console.log("finalizar jogo")
+    }
+
+    static reiniciar(){
+        console.log("reiniciar...")
+        setTimeout(() => {
+            Passaro.estado = 'vivo';
+        }, 250);
     }
 }
