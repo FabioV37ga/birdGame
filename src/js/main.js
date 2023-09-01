@@ -2,31 +2,10 @@
 localStorage.setItem("birdGamePontuacao",
     localStorage.getItem("birdGamePontuacao") == null ? 0 : localStorage.getItem("birdGamePontuacao")
 )
-// tudo abaixo vai mudar em breve:
-var start = false;
-// Input SPACEBAR
-document.querySelector("body").addEventListener("keydown", function (e) {
-    if (e.keyCode == 32) {
-        // Se o jogo ainda não foi iniciado, inicia.
-        if (start == false) {
-            start = true
-            Jogo.iniciar()
-        }
-        // Faz o pássaro pular
-        Passaro.pular();
-    }
-})
-// Input MOUSEDOWN
-document.querySelector("body").addEventListener("mousedown", function () {
-    // Se o jogo ainda não foi iniciado, inicia.
-    if (start == false) {
-        start = true
-        Jogo.iniciar()
-    }
-    // Faz o pássaro pular
-    Passaro.pular();
-})
+// Atribui teclas para as funções do jogo
+Input.atribuir()
 
+// easterEgg (ler o código fonte pra descobrir se tem easter eggs é roubar, volte para o jogo.)
 function onKonamiCode(cb) {
     var input = '';
     var key = '38384040373937396665';
@@ -42,6 +21,5 @@ function onKonamiCode(cb) {
 
 onKonamiCode(function () {
     document.querySelector(".passaro").children[0].children[0].src = 'src/img/konami.png'
-
 })
 
