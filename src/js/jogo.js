@@ -41,6 +41,10 @@ class Jogo {
         console.log("reiniciar...")
         setTimeout(() => {
             Passaro.estado = 'vivo';
+            Passaro.posicaoY = 245;
+            Passaro.elemento.style.bottom = "240px"
+            Passaro.rotacao = 0
+            Passaro.elemento.children[0].style = "transform: rotate(0deg)"
         }, 250);
     }
 }
