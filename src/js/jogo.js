@@ -37,14 +37,13 @@ class Jogo {
         console.log("finalizar jogo")
     }
 
-    static reiniciar(){
+    static reiniciar() {
         console.log("reiniciar...")
         setTimeout(() => {
             Passaro.estado = 'vivo';
-            Passaro.posicaoY = 245;
-            Passaro.elemento.style.bottom = "240px"
+            Passaro.posicaoY = 240;
             Passaro.rotacao = 0
-            Passaro.elemento.children[0].style = "transform: rotate(0deg)"
+            Passaro.atualizarPosicao()
         }, 250);
     }
 }
