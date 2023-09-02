@@ -65,13 +65,17 @@
     position: absolute;
     height: 1194px;
     right: 80px;
-    top: -273px;
+    /* top: -273px; */
 }
 
 .pipes img {
     width: 85px;
     height: 1194px;
     user-select: none;
+}
+
+.pipe{
+    position: absolute;
 }
 
 .pipemove{
@@ -83,7 +87,7 @@
     right: -130px;
  }
  100%{
-    right: 500px
+    right: 600px
  }
 }
 /* valores: 2 canos: 524px cada, espaço interior:  146px*/

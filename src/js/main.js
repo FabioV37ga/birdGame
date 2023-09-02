@@ -23,3 +23,4 @@ onKonamiCode(function () {
     document.querySelector(".passaro").children[0].children[0].src = 'src/img/konami.png'
 })
 
+var pipe = new Pipe();
