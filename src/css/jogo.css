@@ -61,16 +61,33 @@
     user-select: inherit;
 }
 
-.pipes{
+.pipes {
     position: absolute;
     height: 1194px;
     right: 80px;
-    top: -273px
+    top: -273px;
 }
 
-.pipes img{
+.pipes img {
     width: 85px;
     height: 1194px;
+    user-select: none;
 }
 
+.pipemove{
+    animation: linear 3.4s movepipe infinite;
+}
+
+@keyframes movepipe{
+ 0%{
+    right: -130px;
+ }
+ 100%{
+    right: 500px
+ }
+}
 /* valores: 2 canos: 524px cada, espaço interior:  146px*/
+/* ou seja, 
+*topo :"524 - valor 'top' de .passaro"
+*bottom: "(topo + 111)"
+*/
