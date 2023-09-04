@@ -12,6 +12,7 @@ class Jogo {
             // Chama moverChao()
             this.moverChao()
             Passaro.animar()
+            var pipe = new Pipe();
         }
     }
 
