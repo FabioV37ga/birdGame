@@ -12,8 +12,18 @@ class Jogo {
             // Chama moverChao()
             this.moverChao()
             Passaro.animar()
-            var pipe = new Pipe();
+            Jogo.gerarCano()
+            // var pipe = new Pipe();
         }
+    }
+
+    static gerarCano() {
+        var intervalo = setInterval(() => {
+            this.iniciado == false ? clearInterval(intervalo) : null;
+            var pipe;
+            this.iniciado == true ? pipe = new Pipe() : null
+        }, 1500);
+
     }
 
     static moverChao() {

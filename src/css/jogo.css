@@ -79,7 +79,7 @@
 }
 
 .pipemove{
-    animation: linear 3.4s movepipe infinite;
+    animation: linear 3.4s movepipe;
 }
 
 @keyframes movepipe{
