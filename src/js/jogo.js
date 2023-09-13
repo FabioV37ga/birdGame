@@ -50,11 +50,12 @@ class Jogo {
 
     static reiniciar() {
         console.log("reiniciar...")
-        setTimeout(() => {
-            Passaro.estado = 'vivo';
-            Passaro.posicaoY = 240;
-            Passaro.rotacao = 0
-            Passaro.atualizarPosicao()
-        }, 250);
+        Pipe.apagar()
+        // setTimeout(() => {
+        Passaro.estado = 'vivo';
+        Passaro.posicaoY = 240;
+        Passaro.rotacao = 0
+        Passaro.atualizarPosicao()
+        // }, 250);
     }
 }
