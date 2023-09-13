@@ -78,9 +78,9 @@
     position: absolute;
 }
 
-.pipemove{
+/* .pipemove{
     animation: linear 3.4s movepipe;
-}
+} */
 
 @keyframes movepipe{
  0%{
