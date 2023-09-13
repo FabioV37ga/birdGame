@@ -45,11 +45,11 @@ class Jogo {
     static finalizar() {
         // Finaliza o jogo
         Passaro.estado == 'morto' ? Jogo.iniciado = false : null;
-        console.log("finalizar jogo")
+        console.log("jogo.finalizar")
     }
 
     static reiniciar() {
-        console.log("reiniciar...")
+        console.log("jogo.reiniciar")
         Pipe.apagar()
         // setTimeout(() => {
         Passaro.estado = 'vivo';

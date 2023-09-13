@@ -13,7 +13,7 @@ class Input {
         if (Jogo.iniciado == true)
             switch (acao) {
                 case 'pular':
-                    console.log("pular")
+                    // console.log("pular")
                     Passaro.pular()
                     break
             }

@@ -8,7 +8,7 @@ class Passaro {
     static velocidadeQueda = 0.1
     static pulando = false;
     static velocidadePulo = 2.0;
-    static tamanhoPulo = 85;
+    static tamanhoPulo = 80;
     static rotacao = 0;
     static estado = 'vivo';
 
@@ -31,8 +31,8 @@ class Passaro {
                 }, 1);
                 // redefine velocidade de queda para 0.15;
                 this.velocidadeQueda = 0.15;
-                // Incrementa velocidade a cada execução (aceleração)
-                this.velocidadePulo -= 0.010;
+                // Diminui velocidade a cada execução (aceleração)
+                this.velocidadePulo -= 0.02;
                 // Adiciona altura
                 this.posicaoY += this.velocidadePulo;
                 // Chama o método para atualizar a posicao se ela ainda não atingiu posicaoFinal
@@ -62,7 +62,7 @@ class Passaro {
             if (this.pulando == false) {
                 // Rotaciona o pássaro em direção ao chão enquanto ele estiver caindo;
                 if (this.velocidadeQueda > 1.5)
-                    this.rotacao >= -85 ? this.rotacao-- : null;
+                    this.rotacao >= -90 ? this.rotacao-- : null;
                 // Enquanto a posicao do passaro for > -8, aceleradamente cai em direção ao chão da fase
                 if (this.posicaoY > -1) {
                     // Aceleração de queda: aumenta a velocidade de queda a cada execução
@@ -86,13 +86,13 @@ class Passaro {
     }
 
     static morrer() {
-        console.log("morrer")
+        // console.log("morrer")
         this.estado = 'morto'
         Jogo.finalizar()
     }
 
     static animar() {
-        console.log("animar")
+        // console.log("animar")
         // Essa variavel controla o frame atual (entre 3 possiveis) da imagem do passaro
         var position = 0;
         var intervalo = setInterval(() => {

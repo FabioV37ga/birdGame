@@ -48,7 +48,7 @@ class Pipe {
     }
 
     apagar() {
-        console.log(`remove \n${this.elemento}`)
+        // console.log(`remove \n${this.elemento}`)
         this.elemento.remove()
     }
 
