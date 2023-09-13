@@ -27,8 +27,8 @@ class Jogo {
     }
 
     static verificarColisao() {
-        console.log(Pipe.gap)
-        console.log(Passaro.posicaoInferior + ", " + Passaro.posicaoSuperior)
+        // console.log(Pipe.gap)
+        // console.log(Passaro.posicaoInferior + ", " + Passaro.posicaoSuperior)
         // console.log(Passaro.posicaoInferior + 35)
         // console.log(Pipe.gap[1])
         // console.log(Passaro.posicaoSuperior + 35 <= Pipe.gap[1])
@@ -36,7 +36,7 @@ class Jogo {
             Pipe.gap[1] > Passaro.posicaoInferior){
             console.log("Teste!")
         }else{
-            Passaro.morrer()
+            console.log("hit!!!!")
         }
     }
 

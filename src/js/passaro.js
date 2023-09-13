@@ -88,7 +88,10 @@ class Passaro {
     static morrer() {
         // console.log("morrer")
         this.estado = 'morto'
-        Jogo.finalizar()
+        Jogo.allowRestart == false ? setTimeout(() => {
+            Jogo.allowRestart = true
+        }, 300) : null;
+        Jogo.allowRestart == true ? Jogo.finalizar() : null;
     }
 
     static animar() {
