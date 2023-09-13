@@ -54,7 +54,7 @@ class Pipe {
 
     static apagar() {
         var elementoHtml = document.querySelectorAll(".pipemove");
-        for (let i = 0; i <= elementoHtml.length - 1; i++){
+        for (let i = 0; i <= elementoHtml.length - 1; i++) {
             elementoHtml[i].remove()
         }
     }
