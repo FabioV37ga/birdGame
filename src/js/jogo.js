@@ -7,8 +7,9 @@ class Jogo {
     static iniciar() {
         // Inicia o jogo
         if (this.iniciado == false) {
-            this.iniciado = true;
             console.log("jogo.iniciar");
+            this.iniciado = true;
+            Pipe.apagar()
             // Chama moverChao()
             this.moverChao()
             Passaro.animar()
@@ -28,8 +29,8 @@ class Jogo {
 
     static verificarColisao() {
         if (Pipe.gap[0] < Passaro.posicaoInferior &&
-            Pipe.gap[1] > Passaro.posicaoInferior){
-        }else{
+            Pipe.gap[1] > Passaro.posicaoInferior) {
+        } else {
             Passaro.morrer()
             console.log("hit!!!!")
         }
@@ -53,8 +54,19 @@ class Jogo {
 
     static finalizar() {
         // Finaliza o jogo
-        Passaro.estado == 'morto' ? Jogo.iniciado = false : null;
-        console.log("jogo.finalizar")
+        if (Passaro.estado == 'morto' && Jogo.iniciado == true) {
+            Jogo.iniciado = false
+            // Pisca a tela quando o passaro morrer
+            var tela = document.querySelector(".filter")
+            tela.addEventListener("animationend", piscar)
+            tela.classList.add("passaro-morre")
+            function piscar() {
+                tela.classList.remove("passaro-morre")
+                tela.removeEventListener("animationend", piscar)
+            }
+        }
+        // Jogo.jogarNovamente();
+
     }
 
     static reiniciar() {

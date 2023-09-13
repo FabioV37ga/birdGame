@@ -9,7 +9,7 @@ class Input {
     static usar(acao) {
         // to fix: essa linha faz com que o passaro ainda voe depois de morrer.
         Jogo.iniciado == false && Passaro.estado == 'vivo' ? Jogo.iniciar() : null;
-        Jogo.iniciado == false && Passaro.estado == 'morto' ? Jogo.reiniciar() : null;
+        // Jogo.iniciado == false && Passaro.estado == 'morto' ? Jogo.reiniciar() : null;
         if (Jogo.iniciado == true)
             switch (acao) {
                 case 'pular':
