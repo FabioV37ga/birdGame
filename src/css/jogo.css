@@ -74,7 +74,7 @@
     user-select: none;
 }
 
-.pipe{
+.pipe {
     position: absolute;
 }
 
@@ -82,14 +82,16 @@
     animation: linear 3.4s movepipe;
 } */
 
-@keyframes movepipe{
- 0%{
-    right: -130px;
- }
- 100%{
-    right: 600px
- }
+@keyframes movepipe {
+    0% {
+        right: -130px;
+    }
+
+    100% {
+        right: 600px
+    }
 }
+
 /* valores: 2 canos: 524px cada, espaço interior:  146px*/
 /* ou seja, 
 *topo :"524 - valor 'top' de .passaro"
