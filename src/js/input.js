@@ -1,8 +1,11 @@
 class Input {
     static alvo = document.querySelector("body");
     static atribuir() {
-        this.alvo.addEventListener("mousedown", () => { this.usar('pular') });
-        this.alvo.addEventListener("touchstart", () => { this.usar('pular') });
+        if (window.screen.width > 700){
+            this.alvo.addEventListener("mousedown", () => { this.usar('pular') });
+        }else{
+            this.alvo.addEventListener("touchstart", () => { this.usar('pular') });
+        }
         this.alvo.addEventListener("keydown", (e) => { e.keyCode == 32 ? this.usar('pular') : null });
     }
 
