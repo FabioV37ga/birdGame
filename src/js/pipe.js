@@ -1,6 +1,7 @@
 class Pipe {
+    static gap = [0, 0];
     static id = 0;
-    static range = [-470, -170];
+    static range = [470, 170];
     static jquery = `<div class="pipe pipemove">
     <img src="src/img/pipes.png" draggable="false">
     </div>`
@@ -30,8 +31,10 @@ class Pipe {
 
     posicionarY() {
         this.posicaoY = Math.floor(Math.random() * (Pipe.range[1] - Pipe.range[0]) + Pipe.range[0])
-        this.elemento.style.top = `${this.posicaoY}px`
-        // console.log(this.elemento.style.top)
+        this.elemento.style.bottom = `${this.posicaoY}px`
+        // console.log(this.elemento.style.bottom)
+        // console.log(Pipe.gap)
+
     }
 
     moverX() {
@@ -39,6 +42,11 @@ class Pipe {
         var intervalo = setInterval(() => {
             posicaoX += 0.75;
             this.elemento.style.right = `${posicaoX}px`
+            // range para verificar colisao
+            // Math.trunc(posicaoX) % 2 == 0 &&
+            Math.trunc(posicaoX) == 184 ? Pipe.gap = [this.posicaoY - 107, (this.posicaoY - 107) + 113]: null;
+            posicaoX >= 185 && posicaoX <= 320 ? Jogo.verificarColisao() : null;
+            // console.log(Pipe.gap)
             // Condicoes para finalizar o intervalo
             // 1. Caso o cano chegue do outro lado da tela
             posicaoX >= 483 ? clearInterval(intervalo) + this.apagar() : null;

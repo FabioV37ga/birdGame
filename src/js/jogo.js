@@ -26,6 +26,20 @@ class Jogo {
 
     }
 
+    static verificarColisao() {
+        console.log(Pipe.gap)
+        console.log(Passaro.posicaoInferior + ", " + Passaro.posicaoSuperior)
+        // console.log(Passaro.posicaoInferior + 35)
+        // console.log(Pipe.gap[1])
+        // console.log(Passaro.posicaoSuperior + 35 <= Pipe.gap[1])
+        if (Pipe.gap[0] < Passaro.posicaoInferior &&
+            Pipe.gap[1] > Passaro.posicaoInferior){
+            console.log("Teste!")
+        }else{
+            Passaro.morrer()
+        }
+    }
+
     static moverChao() {
         // Movimenta o chão da fase para a esquerda continuamente até que o jogo seja finalizado
         // Variável contadora

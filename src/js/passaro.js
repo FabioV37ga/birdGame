@@ -2,7 +2,7 @@ class Passaro {
     static elemento = document.querySelector(".passaro");
     static tamanho = 35;
     static posicaoY = 240;
-    static posicaoSuperior = this.posicaoY + this.tamanho;
+    static posicaoSuperior = this.posicaoY + 25;
     static posicaoInferior = this.posicaoY;
     static caindo = false;
     static velocidadeQueda = 0.1
