@@ -2,7 +2,8 @@ class Jogo {
     static alturaJanela = 560;
     static iniciado = false;
     static elementoChao = document.querySelector(".chao");
-    static pontuacao;
+    static pontuacaoRecord = parseInt(localStorage.getItem("birdGamePontuacao"));
+    static pontuacao = 0;
 
     static iniciar() {
         // Inicia o jogo
@@ -16,6 +17,13 @@ class Jogo {
             Jogo.gerarCano()
             // var pipe = new Pipe();
         }
+    }
+
+    static pontuar() {
+        Jogo.pontuacao++
+        parseInt(localStorage.getItem("birdGamePontuacao")) < Jogo.pontuacao
+            ? localStorage.setItem("birdGamePontuacao", Jogo.pontuacao) : null;
+        console.log(Jogo.pontuacao)
     }
 
     static gerarCano() {
@@ -32,7 +40,7 @@ class Jogo {
             Pipe.gap[1] > Passaro.posicaoInferior) {
         } else {
             Passaro.morrer()
-            console.log("hit!!!!")
+            // console.log("hit!!!!")
         }
     }
 
