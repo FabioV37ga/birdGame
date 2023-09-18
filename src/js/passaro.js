@@ -86,9 +86,9 @@ class Passaro {
     }
 
     static morrer() {
-        console.log("morre")
-        this.estado = 'morto'
-        Jogo.finalizar()
+        
+        this.estado == "vivo" ? (this.estado = 'morto') + Jogo.finalizar(): null;
+        
     }
 
     static animar() {
