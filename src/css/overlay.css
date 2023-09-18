@@ -1,0 +1,16 @@
+.overlay-jogo{
+    display: flex;
+    justify-content: center;
+}
+
+.pontuacao{
+    margin-top: 100px
+}
+
+.pontuacao-valor{
+    font-family: 'DotGothic16', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 50px;
+    text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black
+}

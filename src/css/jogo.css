@@ -35,7 +35,7 @@
     width: 5px;
     margin: 0 190px;
     /* background: greenyellow; */
-    position: relative;
+    position: absolute;
     z-index: 1;
 }
 

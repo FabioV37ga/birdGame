@@ -45,6 +45,7 @@ class Pipe {
             // range para verificar colisao
             // Math.trunc(posicaoX) % 2 == 0 &&
             Math.trunc(posicaoX) == 184 ? Pipe.gap = [this.posicaoY - 107, (this.posicaoY - 107) + 113]: null;
+            Math.trunc(posicaoX) == 186 ? Jogo.pontuar() : null;
             posicaoX >= 185 && posicaoX <= 320 ? Jogo.verificarColisao() : null;
             // console.log(Pipe.gap)
             // Condicoes para finalizar o intervalo

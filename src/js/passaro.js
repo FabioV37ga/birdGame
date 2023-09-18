@@ -86,6 +86,7 @@ class Passaro {
     }
 
     static morrer() {
+        console.log("morre")
         this.estado = 'morto'
         Jogo.finalizar()
     }

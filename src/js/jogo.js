@@ -23,6 +23,7 @@ class Jogo {
         Jogo.pontuacao++
         parseInt(localStorage.getItem("birdGamePontuacao")) < Jogo.pontuacao
             ? localStorage.setItem("birdGamePontuacao", Jogo.pontuacao) : null;
+        document.querySelector(".pontuacao-valor").textContent = Jogo.pontuacao;
         console.log(Jogo.pontuacao)
     }
 
@@ -40,7 +41,7 @@ class Jogo {
             Pipe.gap[1] > Passaro.posicaoInferior) {
         } else {
             Passaro.morrer()
-            // console.log("hit!!!!")
+            console.log("hit!!!!")
         }
     }
 
