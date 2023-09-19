@@ -19,8 +19,8 @@ class Jogo {
         }
     }
 
-    static pontuar() {
-        Jogo.pontuacao++
+    static pontuar(e) {
+        e != null ? Jogo.pontuacao += e : Jogo.pontuacao++
         parseInt(localStorage.getItem("birdGamePontuacao")) < Jogo.pontuacao
             ? localStorage.setItem("birdGamePontuacao", Jogo.pontuacao) : null;
         document.querySelector(".pontuacao-valor").textContent = Jogo.pontuacao;
@@ -75,17 +75,21 @@ class Jogo {
             }
         }
         // Jogo.jogarNovamente();
+    }
 
+    static jogarNovamente() {
+        
     }
 
     static reiniciar() {
         console.log("jogo.reiniciar")
+        Jogo.pontuacao = 0;
+        document.querySelector(".pontuacao-valor").textContent = Jogo.pontuacao;
         Pipe.apagar()
-        // setTimeout(() => {
         Passaro.estado = 'vivo';
         Passaro.posicaoY = 240;
         Passaro.rotacao = 0
         Passaro.atualizarPosicao()
-        // }, 250);
     }
+
 }
