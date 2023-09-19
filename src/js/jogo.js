@@ -73,16 +73,29 @@ class Jogo {
                 tela.classList.remove("passaro-morre")
                 tela.removeEventListener("animationend", piscar)
             }
+            
+            var playAgain = document.querySelector(".restart")
+            playAgain.style.display = "initial"
+            setTimeout(() => {
+                playAgain.addEventListener("click", handle)
+                function handle(){
+                    Jogo.reiniciar()
+                    playAgain.removeEventListener("click", handle)
+                }
+            }, 800);
         }
         // Jogo.jogarNovamente();
     }
 
     static jogarNovamente() {
-        
+
     }
 
     static reiniciar() {
         console.log("jogo.reiniciar")
+        var playAgain = document.querySelector(".restart")
+        playAgain.style.display = "none"
+
         Jogo.pontuacao = 0;
         document.querySelector(".pontuacao-valor").textContent = Jogo.pontuacao;
         Pipe.apagar()

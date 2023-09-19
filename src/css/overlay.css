@@ -24,11 +24,23 @@
     margin-top: 170px;
     image-rendering: pixelated;
     display: none;
+    animation: playAgain .8s;
 }
 
 .pontuacao-restart{
     width: 133px;
     height: 200px;
     margin: 0 0 10px 0;
-    background: red;
+    /* background: red; */
+}
+
+@keyframes playAgain {
+    0%{
+        margin-top: 70px;
+        opacity: 0%;
+    }
+    100%{
+        margin-top: 170px;
+        opacity: 100%;
+    }
 }
