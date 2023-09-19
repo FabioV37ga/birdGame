@@ -42,15 +42,22 @@ class Pipe {
         var intervalo = setInterval(() => {
             posicaoX += 0.75;
             this.elemento.style.right = `${posicaoX}px`
-            // range para verificar colisao
-            // Math.trunc(posicaoX) % 2 == 0 &&
-            Math.trunc(posicaoX) == 184 ? Pipe.gap = [this.posicaoY - 107, (this.posicaoY - 107) + 113]: null;
-            Math.trunc(posicaoX) == 186 ? Jogo.pontuar() : null;
+            var posicaoXTrunc = Math.trunc(posicaoX);
+            switch (posicaoXTrunc) {
+                case 184:
+                    Pipe.gap = [this.posicaoY - 107, (this.posicaoY - 107) + 113];
+                    break
+                case 191:
+                    Jogo.pontuar();
+                    break
+                case posicaoXTrunc >= 483:
+                    this.apagar()
+                    clearInterval(intervalo)
+                    break
+            }
             posicaoX >= 185 && posicaoX <= 320 ? Jogo.verificarColisao() : null;
-            // console.log(Pipe.gap)
-            // Condicoes para finalizar o intervalo
             // 1. Caso o cano chegue do outro lado da tela
-            posicaoX >= 483 ? clearInterval(intervalo) + this.apagar() : null;
+            // Condicoes para finalizar o intervalo
             // 2. Caso o jogo seja finalizado no meio da animação
             Jogo.iniciado == true ? null : clearInterval(intervalo)
         }, 1);

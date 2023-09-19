@@ -19,12 +19,20 @@ class Jogo {
         }
     }
 
-    static pontuar(e) {
-        e != null ? Jogo.pontuacao += e : Jogo.pontuacao++
-        parseInt(localStorage.getItem("birdGamePontuacao")) < Jogo.pontuacao
-            ? localStorage.setItem("birdGamePontuacao", Jogo.pontuacao) : null;
-        document.querySelector(".pontuacao-valor").textContent = Jogo.pontuacao;
-        // console.log(Jogo.pontuacao)
+    static moverChao() {
+        // Movimenta o chão da fase para a esquerda continuamente até que o jogo seja finalizado
+        // Variável contadora
+        var posicaoChao = 0;
+        // Intervalo responsável por mover o chão
+        var intervalo = setInterval(() => {
+            posicaoChao -= .75;
+            // Atribui posição = posicaoChao px
+            this.elementoChao.style.backgroundPositionX = `${posicaoChao}px`
+            // Se o jogo for finalizado, finaliza o loop
+            if (Jogo.iniciado == false) {
+                clearInterval(intervalo);
+            }
+        }, 1);
     }
 
     static gerarCano() {
@@ -45,20 +53,12 @@ class Jogo {
         }
     }
 
-    static moverChao() {
-        // Movimenta o chão da fase para a esquerda continuamente até que o jogo seja finalizado
-        // Variável contadora
-        var posicaoChao = 0;
-        // Intervalo responsável por mover o chão
-        var intervalo = setInterval(() => {
-            posicaoChao -= .75;
-            // Atribui posição = posicaoChao px
-            this.elementoChao.style.backgroundPositionX = `${posicaoChao}px`
-            // Se o jogo for finalizado, finaliza o loop
-            if (Jogo.iniciado == false) {
-                clearInterval(intervalo);
-            }
-        }, 1);
+    static pontuar(e) {
+        e != null ? Jogo.pontuacao += e : Jogo.pontuacao++
+        parseInt(localStorage.getItem("birdGamePontuacao")) < Jogo.pontuacao
+            ? localStorage.setItem("birdGamePontuacao", Jogo.pontuacao) : null;
+        document.querySelector(".pontuacao-valor").textContent = Jogo.pontuacao;
+        // console.log(Jogo.pontuacao)
     }
 
     static finalizar() {
@@ -72,9 +72,9 @@ class Jogo {
             function piscar() {
                 tela.classList.remove("passaro-morre")
                 tela.removeEventListener("animationend", piscar)
+                Jogo.jogarNovamente();
             }
         }
-        Jogo.jogarNovamente();
     }
 
     static jogarNovamente() {
@@ -82,7 +82,7 @@ class Jogo {
         playAgain.style.display = "initial"
         setTimeout(() => {
             playAgain.addEventListener("click", handle)
-            function handle(){
+            function handle() {
                 Jogo.reiniciar()
                 playAgain.style.display = "none"
                 playAgain.removeEventListener("click", handle)
@@ -100,5 +100,4 @@ class Jogo {
         Passaro.rotacao = 0
         Passaro.atualizarPosicao()
     }
-
 }
