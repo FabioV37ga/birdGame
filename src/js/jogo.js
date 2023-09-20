@@ -55,9 +55,12 @@ class Jogo {
 
     static pontuar(e) {
         e != null ? Jogo.pontuacao += e : Jogo.pontuacao++
-        parseInt(localStorage.getItem("birdGamePontuacao")) < Jogo.pontuacao
-            ? localStorage.setItem("birdGamePontuacao", Jogo.pontuacao) : null;
+        if (parseInt(localStorage.getItem("birdGamePontuacao")) < Jogo.pontuacao) {
+            localStorage.setItem("birdGamePontuacao", Jogo.pontuacao)
+            Jogo.pontuacaoRecord = Jogo.pontuacao
+        }
         document.querySelector(".pontuacao-valor").textContent = Jogo.pontuacao;
+        // console.log(parseInt(localStorage.getItem("birdGamePontuacao")))
         // console.log(Jogo.pontuacao)
     }
 
@@ -65,6 +68,8 @@ class Jogo {
         // Finaliza o jogo
         if (Passaro.estado == 'morto' && Jogo.iniciado == true) {
             Jogo.iniciado = false
+            $(".displaypoint")[0].textContent = Jogo.pontuacao;
+            $(".displaypoint")[1].textContent = Jogo.pontuacaoRecord;
             // Pisca a tela quando o passaro morrer
             var tela = document.querySelector(".filter")
             tela.addEventListener("animationend", piscar)
