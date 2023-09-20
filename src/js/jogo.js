@@ -68,6 +68,7 @@ class Jogo {
         // Finaliza o jogo
         if (Passaro.estado == 'morto' && Jogo.iniciado == true) {
             Jogo.iniciado = false
+            $(".pontuacao-valor")[0].style.display = "none"
             $(".displaypoint")[0].textContent = Jogo.pontuacao;
             $(".displaypoint")[1].textContent = Jogo.pontuacaoRecord;
             // Pisca a tela quando o passaro morrer
@@ -89,6 +90,7 @@ class Jogo {
             playAgain.addEventListener("click", handle)
             function handle() {
                 Jogo.reiniciar()
+                $(".pontuacao-valor")[0].style.display = "initial"
                 playAgain.style.display = "none"
                 playAgain.removeEventListener("click", handle)
             }
