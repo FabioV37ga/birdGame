@@ -1,16 +1,16 @@
-.overlay-jogo{
+.overlay-jogo {
     display: flex;
     justify-content: center;
     z-index: 10;
     user-select: none;
 }
 
-.pontuacao{
+.pontuacao {
     margin-top: 100px;
     user-select: inherit;
 }
 
-.pontuacao-valor{
+.pontuacao-valor {
     user-select: inherit;
     font-family: 'DotGothic16', sans-serif;
     font-weight: bold;
@@ -19,7 +19,7 @@
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black
 }
 
-.restart{
+.restart {
     position: absolute;
     margin-top: 170px;
     image-rendering: pixelated;
@@ -27,7 +27,16 @@
     animation: playAgain .8s;
 }
 
-.pontuacao-restart{
+.restart a img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.restart a {
+    cursor: pointer;
+}
+
+.pontuacao-restart {
     width: 133px;
     height: 200px;
     margin: 0 0 10px 0;
@@ -43,7 +52,7 @@
     /* background: red; */
 }
 
-.pontuacao-restart *{
+.pontuacao-restart * {
     height: 30%;
     user-select: inherit;
     font-family: 'DotGothic16', sans-serif;
@@ -53,16 +62,17 @@
     text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
 }
 
-.atual{
+.atual {
     margin-top: 33px;
 }
 
 @keyframes playAgain {
-    0%{
+    0% {
         margin-top: 70px;
         opacity: 0%;
     }
-    100%{
+
+    100% {
         margin-top: 170px;
         opacity: 100%;
     }
