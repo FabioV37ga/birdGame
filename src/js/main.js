@@ -3,7 +3,7 @@ localStorage.setItem("birdGamePontuacao",
     localStorage.getItem("birdGamePontuacao") == null ? 0 : localStorage.getItem("birdGamePontuacao")
 )
 // document.querySelector(".pontuacao-valor").textContent = localStorage.getItem("birdGamePontuacao")
-
+Jogo.pontuacaoRecord = localStorage.getItem("birdGamePontuacao")
 // Atribui teclas para as funções do jogo
 Input.atribuir()
 
